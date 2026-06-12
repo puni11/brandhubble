@@ -1,5 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+import Navbar from "@/component/NavBar";
+import Footer from "@/component/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -9,6 +12,32 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+const wormbox = localFont({
+  src: [
+    {
+      path: "../public/wormbox_rounded.ttf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-wormbox",
+});
+
+const apfel = localFont({
+  src: [
+    {
+      path: "../public/apfelGrotezk/ApfelGrotezk-Mittel.otf",
+      weight: "600",
+      style: "sembibold",
+    },
+    {
+      path: "../public/apfelGrotezk/ApfelGrotezk-Regular.woff2",
+      weight: "500",
+      style: "normal",
+    }
+  ],
+  variable: "--font-apfel",
 });
 
 export const metadata = {
@@ -20,9 +49,13 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${wormbox.variable} ${apfel.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      
+      <body className="min-h-full flex flex-col">{children}
+<Navbar />
+        <Footer/>
+      </body>
     </html>
   );
 }
