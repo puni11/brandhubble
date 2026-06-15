@@ -1,8 +1,10 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
+import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/component/NavBar";
 import Footer from "@/component/Footer";
+import CustomCursor from "@/component/CustomCursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,6 +15,7 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
 const wormbox = localFont({
   src: [
     {
@@ -29,13 +32,13 @@ const apfel = localFont({
     {
       path: "../public/apfelGrotezk/ApfelGrotezk-Mittel.otf",
       weight: "600",
-      style: "sembibold",
+      style: "normal",
     },
     {
       path: "../public/apfelGrotezk/ApfelGrotezk-Regular.woff2",
       weight: "500",
       style: "normal",
-    }
+    },
   ],
   variable: "--font-apfel",
 });
@@ -51,10 +54,45 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${wormbox.variable} ${apfel.variable} h-full antialiased`}
     >
-      
-      <body className="min-h-full flex flex-col">{children}
-<Navbar />
-        <Footer/>
+      <body className="min-h-full flex flex-col">
+        
+        {/* Meta Pixel */}
+        <Script id="facebook-pixel" strategy="afterInteractive">
+          {`
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;
+            n.push=n;
+            n.loaded=!0;
+            n.version='2.0';
+            n.queue=[];
+            t=b.createElement(e);
+            t.async=!0;
+            t.src=v;
+            s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s);
+            }(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+
+            fbq('init', '2162090161409308');
+            fbq('track', 'PageView');
+          `}
+        </Script>
+
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=2162090161409308&ev=PageView&noscript=1"
+            alt=""
+          />
+        </noscript>
+          <CustomCursor />
+        <Navbar />
+        {children}
+        <Footer />
       </body>
     </html>
   );

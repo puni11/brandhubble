@@ -7,25 +7,25 @@ const blogs = [
     title: "Behind the Brand: Crafting the Visual Identity for iii Studio",
     date: "Sep 26, 2025",
     image: "/images/b1.avif",
-    href: "/blogs/iii-studio",
+    href: "/blogs/case-study-iii-studio-visual-identity",
   },
   {
     title: "Who's Afraid of ChatGPT-5? Here's Why It's Your Creative Co-Pilot, Not the Competition",
     date: "May 30, 2025",
     image: "/images/b2.avif",
-    href: "/blogs/chatgpt5",
+    href: "/blogs/chatgpt-5-creative-co-pilot",
   },
   {
     title: "Designing for Tomorrow: 8 Graphic Design Trends Shaping 2025",
     date: "Sep 26, 2025",
     image: "/images/b3.avif",
-    href: "/blogs/design-trends",
+    href: "/blogs/8-graphic-design-trends-shaping-2025",
   },
   {
     title: "Future-Proof Your Creative Edge: 5 Skills That Keep You Ahead of the Algorithm",
     date: "Aug 26, 2025",
     image: "/images/b4.avif",
-    href: "/blogs/future-proof",
+    href: "/blogs/future-proof-creative-skills-ai-era",
   },
 ];
 
