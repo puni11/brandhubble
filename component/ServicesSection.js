@@ -41,7 +41,7 @@ const services = [
     description:
       'Strategic positioning, visual identity, and brand messaging that resonates with your target market.',
     btnText: 'Explore Brand Strategy',
-    link: '/services/brand-strategy'
+    link: '/services/branding-and-launch-campaign'
   },
   {
     id: '05',
